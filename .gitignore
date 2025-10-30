@@ -1,0 +1,22 @@
+# Images temporaires (remplacez par vos vraies images)
+images/*.jpg
+images/*.png
+images/*.jpeg
+
+# Documents temporaires
+documents/*.pdf
+
+# Cache et fichiers temporaires
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# Fichiers d'éditeur
+.vscode/
+.idea/
+*.swp
+*.swo

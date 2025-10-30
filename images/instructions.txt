@@ -1,0 +1,28 @@
+
+1. profile.jpg - Votre photo de profil (recommandé: 300x300px, format carré)
+2. interests.jpg - Image représentant vos centres d'intérêts 
+3. sports.jpg - Image de vos activités sportives
+4. studies.jpg - Image liée à vos études (diplôme, université, etc.)
+5. projects.jpg - Image représentant vos projets (code, écrans, etc.)
+6. presentation.jpg - Image pour la section présentation
+
+Conseils pour les images :
+- Format recommandé : JPG ou PNG
+- Taille optimale : Entre 300x200px et 800x600px pour les images de sections
+- Qualité : Bonne résolution mais fichiers pas trop lourds (< 500KB par image)
+- Style : Cohérentes en termes de couleurs et de style
+
+Où trouver des images :
+- Unsplash.com (images libres de droits)
+- Pexels.com (images gratuites)
+- Vos propres photos
+- Icons8.com (pour des illustrations)
+
+Pour remplacer l'image de bannière, ajoutez une image nommée "banner.jpg" dans le dossier images/
+
+Conseils pour l'image de bannière :
+- Format : JPG ou PNG
+- Dimensions recommandées : 1920x800px (format paysage)
+- Qualité : Haute résolution mais pas trop lourde (< 1MB)
+- Style : Paysage, coucher de soleil, ville, montagne, etc.
+- Important : Évitez les images trop chargées car du texte sera affiché par-dessus
