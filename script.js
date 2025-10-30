@@ -254,19 +254,18 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     
     const userName = document.getElementById('userName').value;
     const userEmail = document.getElementById('userEmail').value;
-    const userMessage = document.getElementById('userMessage').value;
     
-    // Créer le lien mailto avec sujet personnalisé et corps vide (juste l'email)
+    // Créer le lien mailto avec sujet personnalisé et corps complètement vide
     const subject = encodeURIComponent(`Message de ${userName}`);
-    const body = encodeURIComponent(`${userEmail}`);
+    const body = encodeURIComponent(``); // Corps complètement vide
     
     const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
     
     // Ouvrir le client email
     window.location.href = mailtoLink;
     
-    // Message de confirmation simple
-    alert('Votre boîte mail va s\'ouvrir pour envoyer le mail');
+    // Message de confirmation court et simple
+    alert('Votre boîte mail va s\'ouvrir');
     
     // Réinitialiser le formulaire
     this.reset();
