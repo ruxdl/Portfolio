@@ -256,11 +256,24 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const userEmail = document.getElementById('userEmail').value;
     const userMessage = document.getElementById('userMessage').value;
     
+    // Debug - afficher les valeurs récupérées
+    console.log('Nom:', userName);
+    console.log('Email:', userEmail);
+    console.log('Message:', userMessage);
+    
+    // Vérifier que le message n'est pas vide
+    if (!userMessage.trim()) {
+        alert('Veuillez saisir un message');
+        return;
+    }
+    
     // Créer le lien mailto avec sujet personnalisé et corps = seulement le message du visiteur
     const subject = encodeURIComponent(`Message de ${userName}`);
-    const body = encodeURIComponent(userMessage); // Seulement le message du visiteur
+    const body = encodeURIComponent(userMessage);
     
     const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
+    
+    console.log('Lien mailto:', mailtoLink);
     
     // Ouvrir le client email
     window.location.href = mailtoLink;
