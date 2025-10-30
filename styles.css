@@ -554,21 +554,23 @@ body {
 }
 
 .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     background: var(--primary-color);
-    color: var(--white);
+    color: white;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-size: 1.2rem;
 }
 
 .social-links a:hover {
-    transform: translateY(-2px);
-    background: var(--accent-color);
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(138, 166, 226, 0.3);
 }
 
 /* Modal */
@@ -618,6 +620,65 @@ body {
 
 .close:hover {
     color: var(--text-dark);
+}
+
+/* Styles pour les liens de contact cliquables */
+.contact-link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(138, 166, 226, 0.2);
+}
+
+.contact-link:hover i {
+    transform: scale(1.1);
+}
+
+.contact-link:hover h3 {
+    color: var(--primary-color);
+}
+
+.contact-item i {
+    transition: all 0.3s ease;
+}
+
+/* Styles pour les liens de contact cliquables */
+.contact-link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(138, 166, 226, 0.2);
+}
+
+.contact-link:hover i {
+    transform: scale(1.1);
+}
+
+.contact-link:hover h3 {
+    color: var(--primary-color);
+}
+
+.contact-item i {
+    transition: all 0.3s ease;
+}
+
+/* Amélioration des icônes sociales du footer */
+.footer .fa-linkedin-in {
+    color: white;
+}
+
+.footer .fa-instagram {
+    color: white;
 }
 
 /* Responsive Design */
