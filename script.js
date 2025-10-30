@@ -254,10 +254,11 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     
     const userName = document.getElementById('userName').value;
     const userEmail = document.getElementById('userEmail').value;
+    const userMessage = document.getElementById('userMessage').value;
     
-    // Créer le lien mailto avec sujet personnalisé et corps complètement vide
+    // Créer le lien mailto avec sujet personnalisé et corps = seulement le message du visiteur
     const subject = encodeURIComponent(`Message de ${userName}`);
-    const body = encodeURIComponent(``); // Corps complètement vide
+    const body = encodeURIComponent(userMessage); // Seulement le message du visiteur
     
     const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
     
