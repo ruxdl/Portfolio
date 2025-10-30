@@ -253,35 +253,16 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const submitBtn = document.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     
-    // Vérifier si Formspree est configuré
-    if (this.action.includes('YOUR_FORM_ID')) {
-        e.preventDefault();
-        
-        // Fallback vers mailto si Formspree n'est pas configuré
-        const userName = document.getElementById('userName').value;
-        const userEmail = document.getElementById('userEmail').value;
-        const userMessage = document.getElementById('userMessage').value;
-        
-        const subject = encodeURIComponent(`Message de ${userName} via Portfolio`);
-        const body = encodeURIComponent(`Nom: ${userName}\nEmail: ${userEmail}\n\nMessage:\n${userMessage}`);
-        const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
-        
-        window.location.href = mailtoLink;
-        alert('Votre client email va s\'ouvrir avec le message pré-rempli !\n\n🔧 Pour l\'envoi direct, configurez Formspree selon les instructions.');
-        console.log('🔧 CONFIGURATION FORMSPREE:');
-        console.log('1. Allez sur https://formspree.io/');
-        console.log('2. Créez un compte gratuit');
-        console.log('3. Créez un nouveau formulaire');
-        console.log('4. Remplacez YOUR_FORM_ID dans index.html par votre vraie ID Formspree');
-        
-        this.reset();
-        return;
-    }
-    
-    // Si Formspree est configuré, afficher le feedback
+    // Changer le texte du bouton pendant l'envoi
     submitBtn.textContent = 'Envoi en cours...';
     submitBtn.disabled = true;
     
-    // Le formulaire sera envoyé automatiquement par Formspree
-    // Après envoi, Formspree redirige vers une page de confirmation
+    // Laisser Formspree gérer l'envoi (ne pas empêcher l'envoi du formulaire)
+    // Le formulaire sera automatiquement envoyé à Formspree
+    
+    // Optionnel : restaurer le bouton après un délai (au cas où il y aurait une erreur)
+    setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }, 3000);
 });
