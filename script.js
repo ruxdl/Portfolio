@@ -252,28 +252,21 @@ window.addEventListener('resize', () => {
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const userName = document.getElementById('userName').value;
-    const userEmail = document.getElementById('userEmail').value;
-    const userMessage = document.getElementById('userMessage').value;
+    const userName = document.getElementById('userName').value.trim();
+    const userEmail = document.getElementById('userEmail').value.trim();
+    const userMessage = document.getElementById('userMessage').value.trim();
     
-    // Debug - afficher les valeurs récupérées
-    console.log('Nom:', userName);
-    console.log('Email:', userEmail);
-    console.log('Message:', userMessage);
-    
-    // Vérifier que le message n'est pas vide
-    if (!userMessage.trim()) {
-        alert('Veuillez saisir un message');
+    // Vérifier que tous les champs sont remplis
+    if (!userName || !userEmail || !userMessage) {
+        alert('Veuillez remplir tous les champs');
         return;
     }
     
-    // Créer le lien mailto avec sujet personnalisé et corps = seulement le message du visiteur
+    // Créer le lien mailto avec le message et l'email du visiteur
     const subject = encodeURIComponent(`Message de ${userName}`);
-    const body = encodeURIComponent(userMessage);
+    const body = encodeURIComponent(`${userMessage}\n\n---\nDe: ${userEmail}`);
     
     const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
-    
-    console.log('Lien mailto:', mailtoLink);
     
     // Ouvrir le client email
     window.location.href = mailtoLink;
