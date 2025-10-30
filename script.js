@@ -256,29 +256,17 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const userEmail = document.getElementById('userEmail').value;
     const userMessage = document.getElementById('userMessage').value;
     
-    // Créer le lien mailto
-    const subject = encodeURIComponent(`Message de ${userName} via Portfolio`);
-    const body = encodeURIComponent(`Bonjour Ruben,
-
-Vous avez reçu un nouveau message depuis votre portfolio :
-
-Nom: ${userName}
-Email: ${userEmail}
-
-Message:
-${userMessage}
-
----
-Envoyé depuis votre portfolio
-https://ruxdl.github.io/Portfolio/`);
+    // Créer le lien mailto avec sujet personnalisé et corps vide (juste l'email)
+    const subject = encodeURIComponent(`Message de ${userName}`);
+    const body = encodeURIComponent(`${userEmail}`);
     
     const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
     
     // Ouvrir le client email
     window.location.href = mailtoLink;
     
-    // Message de confirmation
-    alert('✅ Votre client email va s\'ouvrir avec le message pré-rempli !\n\nCliquez sur "Envoyer" dans votre application email.');
+    // Message de confirmation simple
+    alert('Votre boîte mail va s\'ouvrir pour envoyer le mail');
     
     // Réinitialiser le formulaire
     this.reset();
