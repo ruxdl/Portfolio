@@ -1,10 +1,10 @@
-# Images temporaires (remplacez par vos vraies images)
-images/*.jpg
-images/*.png
-images/*.jpeg
+# Images temporaires - décommentez ces lignes si vous ne voulez pas envoyer certaines images
+# images/*.jpg
+# images/*.png
+# images/*.jpeg
 
-# Documents temporaires
-documents/*.pdf
+# Documents temporaires - décommentez si vous ne voulez pas envoyer le CV
+# documents/*.pdf
 
 # Cache et fichiers temporaires
 .DS_Store
