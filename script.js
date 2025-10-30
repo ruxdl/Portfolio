@@ -191,30 +191,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Formulaire de contact
-const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Simulation d'envoi de formulaire
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    
-    submitBtn.textContent = 'Envoi en cours...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        submitBtn.textContent = 'Message envoyé !';
-        submitBtn.style.background = '#10b981';
-        
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
-            contactForm.reset();
-        }, 2000);
-    }, 1500);
-});
+// Supprimé - remplacé par le gestionnaire mailto ci-dessous
 
 // Effet de parallaxe léger pour le hero
 window.addEventListener('scroll', () => {
