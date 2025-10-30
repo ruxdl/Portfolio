@@ -248,21 +248,38 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Gestion du formulaire de contact avec Formspree
+// Gestion du formulaire de contact avec mailto (solution fiable)
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-    const submitBtn = document.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
+    e.preventDefault();
     
-    // Changer le texte du bouton pendant l'envoi
-    submitBtn.textContent = 'Envoi en cours...';
-    submitBtn.disabled = true;
+    const userName = document.getElementById('userName').value;
+    const userEmail = document.getElementById('userEmail').value;
+    const userMessage = document.getElementById('userMessage').value;
     
-    // Laisser Formspree gérer l'envoi (ne pas empêcher l'envoi du formulaire)
-    // Le formulaire sera automatiquement envoyé à Formspree
+    // Créer le lien mailto
+    const subject = encodeURIComponent(`Message de ${userName} via Portfolio`);
+    const body = encodeURIComponent(`Bonjour Ruben,
+
+Vous avez reçu un nouveau message depuis votre portfolio :
+
+Nom: ${userName}
+Email: ${userEmail}
+
+Message:
+${userMessage}
+
+---
+Envoyé depuis votre portfolio
+https://ruxdl.github.io/Portfolio/`);
     
-    // Optionnel : restaurer le bouton après un délai (au cas où il y aurait une erreur)
-    setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 3000);
+    const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Ouvrir le client email
+    window.location.href = mailtoLink;
+    
+    // Message de confirmation
+    alert('✅ Votre client email va s\'ouvrir avec le message pré-rempli !\n\nCliquez sur "Envoyer" dans votre application email.');
+    
+    // Réinitialiser le formulaire
+    this.reset();
 });
