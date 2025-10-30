@@ -247,3 +247,26 @@ window.addEventListener('resize', () => {
         hamburger.classList.remove('active');
     }
 });
+
+// Gestion du formulaire de contact
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const userName = document.getElementById('userName').value;
+    const userEmail = document.getElementById('userEmail').value;
+    const userMessage = document.getElementById('userMessage').value;
+    
+    // Créer le lien mailto
+    const subject = encodeURIComponent(`Message de ${userName} via Portfolio`);
+    const body = encodeURIComponent(`Nom: ${userName}\nEmail: ${userEmail}\n\nMessage:\n${userMessage}`);
+    const mailtoLink = `mailto:riedel.ruben@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Ouvrir le client email
+    window.location.href = mailtoLink;
+    
+    // Message de confirmation
+    alert('Votre client email va s\'ouvrir avec le message pré-rempli !');
+    
+    // Réinitialiser le formulaire
+    this.reset();
+});
